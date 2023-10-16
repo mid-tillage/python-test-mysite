@@ -1,0 +1,22 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Polls Administration</a></h1>
+<!-- {% if user.is_anonymous %}
+  {% include "admin/color_theme_toggle.html" %}
+{% endif %} -->
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+<!-- Note that any of Django’s default admin templates can be overridden. 
+    To override a template, do the same thing you did with base_site.html
+     – copy it from the default directory into your custom directory, and make changes. -->
+
+<!-- Organizing templates
+    Just like the static files, we could have all our templates together, in one big templates directory, 
+    and it would work perfectly well. However, templates that belong to a particular application should be 
+    placed in that application’s template directory (e.g. polls/templates) rather than the project’s 
+    (templates). We’ll discuss in more detail in the reusable apps tutorial why we do this. -->
